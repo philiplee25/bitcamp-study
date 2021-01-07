@@ -19,9 +19,11 @@ tasks.withType(JavaCompile) {
 
 // .class 파일을 둘 폴더를 지정하지 않으면
 // Gradle 은 기본 출력 폴더의 경로로 bin/default' 를 사용한다.
-// 이클립스에서는 각 소스 경로에 대한 기본 출력 폴더가 bin/main 으로 설정되어 있다.
-// 그래서 실제 자바 소스 파일을 컴파일 하면 그 .class 파일이 bin/main 폴더에 저장된다.
-// => 각 bin/default 폴더가 사용되지 않는다.
+
+// 그러나 이클립스 설정 파일을 만드는 과정에서 
+// 각 소스 경로에 대한 기본 출력 폴더가 bin/main 으로 따로 설정되어 있다.
+// 그래서 실제 자바 소스 파일을 컴파일 하면 bin/default 가 아니라
+// bin/main 폴더에 .class 파일이 저장된다.
 
 // 프로젝트에서 사용할 자바 라이브러리를 다운로드 받는 서버
 repositories {
