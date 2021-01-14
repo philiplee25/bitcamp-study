@@ -1,9 +1,12 @@
 package com.eomcs.lang.ex05;
 
-//# 비트 이동 연산자 : 응용 I
+//# 비트 연산자 : 응용 I
 //
 public class Exam0440 {
   public static void main(String[] args) {
+    
+    int x = 0x27a130ff;
+    int y = 0; // x를 뒤집어서 y에 넣고 출력하라
 
     // i 변수에 들어있는 값을 순서대로 1바이트씩 잘라서
     // a,b,c,d 변수에 넣은 다음 각 변수의 값을 16진수로 출력하라!
