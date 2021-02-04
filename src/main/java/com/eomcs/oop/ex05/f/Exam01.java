@@ -12,6 +12,7 @@ public class Exam01 {
     obj.v1 = 100; // A 클래스 설계도에 따라 만든 변수
 
     System.out.printf("v2=%d, v1=%d\n", obj.v2, obj.v1);
+    System.out.println("------------------------------");
 
     // 클래스는 오직 한 번만 로딩된다.
     // - 그래서 static 블록도 위에서 한 번 실행되면 다시 실행하지 않는다.

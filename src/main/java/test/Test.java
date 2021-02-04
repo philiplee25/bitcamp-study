@@ -1,65 +1,19 @@
 package test;
 
+import java.sql.Date;
+
 public class Test {
-  static class Member {
-    int no;
-    String name;
-    int age;
-
-    // 상속받은 메소드를 서브 클래스의 역할에 맞게 재정의 하자.
-    // - 이것을 오버라이딩(overriding) 이라 부른다.
-
-    // 상속받은 메소드?
-    // - 서브 클래스에서 호출할 수 있도록 권한을 획득한 수퍼 클래스의 메소드를 말한다.
-    // - 수퍼 클래스의 메소드를 복사해서 서브 클래스에 가져왔다는 뜻이 아니다.
-
-    // 오버라이딩 문법
-    // - 수퍼 클래스의 메소드와 똑같은 시그너처를 가져야 한다.
-    //
-    @Override // 상속받은 메소드를 서브클래스의 역할에 맞게 재정의 하는것
-    public boolean equals(Object obj) {
-      if (!(obj instanceof Member))
-        return false;
-
-      Member m = (Member) obj;
-
-      if (this.no != m.no)
-        return false;
-
-      if (!this.name.equals(m.name))
-        return false;
-
-      if (this.age != m.age)
-        return false;
-
-      return true;
-    }
-
-    public int hashCode() {
-      String str = this.no + "," + this.name + "," + this.age;
-      return str.hashCode();
-    }
-  }
-
   public static void main(String[] args) {
-    Member obj = new Member();
-    obj.no = 1;
-    obj.name = "홍길동";
-    obj.age = 20;
+    int[] arr1 = new int[5];
+    float[] arr2 = new float[5];
 
-    Member obj2 = new Member();
-    obj2.no = 1;
-    obj2.name = "홍길동";
-    obj2.age = 20;
+    // arr1[0] = 100;
+    // arr1[1] = 3.14f;
 
-    System.out.println(obj.toString());
-    System.out.println(obj2.toString());
+    Object[] arr3 = new Object[5];
 
-    System.out.printf(Integer.toHexString(obj.hashCode()));
-    System.out.printf(Integer.toHexString(obj2.hashCode()));
-
-    System.out.println(obj == obj2);
-    System.out.println(obj.equals(obj2));
+    arr3[0] = new String("hello");
+    arr3[1] = new Date(System.currentTimeMillis());
+    arr3[2] = new StringBuffer("Hello");
   }
-
 }
