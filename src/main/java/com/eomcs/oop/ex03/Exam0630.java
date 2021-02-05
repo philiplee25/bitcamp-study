@@ -7,7 +7,7 @@ public class Exam0630 {
     static int a;
 
     static void m() {
-      System.out.println("A.m");
+      System.out.println("A.m()");
     }
 
     // 클래스가 로딩될 때 스태틱 초기화 블록은 실행된다.
