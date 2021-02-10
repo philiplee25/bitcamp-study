@@ -12,12 +12,12 @@ abstract class Letter {
 
   // 수퍼 클래스에서 기능이 어떻게 동작하는지 정의한다.
   public void print() {
-    printHeader();
+    this.printHeader();
     System.out.println(content);
     System.out.println();
-    System.out.printf("              From %s!\n", getSign());
+    System.out.printf("              From %s!\n", this.getSign());
     System.out.println();
-    printHeader();
+    this.printHeader();
   }
 
   // 세부 사항에 대한 것은
@@ -34,6 +34,7 @@ class LoveLetter extends Letter {
   public void printHeader() {
     System.out.println("♥♥♥♥♥♥♥♥♥♥♥♥♥♥ [사랑을 그대에게] ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥");
   }
+
 
   @Override
   public String getSign() {
