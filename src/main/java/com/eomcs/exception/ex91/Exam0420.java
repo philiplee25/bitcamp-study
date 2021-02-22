@@ -6,8 +6,7 @@ public class Exam0420 {
   static int sum;
   static float aver;
 
-  static void computeScore(int kor, int eng, int math)
-      throws Exception {
+  static void computeScore(int kor, int eng, int math) throws Exception {
     // 예외를 던지는 경우 메서드 선언에 명시해야 한다.
 
     if (kor < 0 || kor > 100 ||

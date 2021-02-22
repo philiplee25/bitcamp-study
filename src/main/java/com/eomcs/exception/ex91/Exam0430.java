@@ -26,8 +26,9 @@ public class Exam0430 {
   public static void main(String[] args) {
 
     // 예외 처리 문법을 사용하지 않더라도 호출할 수 있다.
+    // => RuntimeException 계열의 예외를 던지는 경우,
+    //    컴파일러는 예외 처리를 했는지 검사하지 않는다.
     computeScore(100, 90, 80);  // OK!
-
     // 단 예외가 발생했을 때 상위 호출자에게
     // 그 예외를 전달한다.
 
