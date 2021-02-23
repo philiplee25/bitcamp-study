@@ -18,11 +18,15 @@ public class Exam0120 {
     //    0 ~ 255까지의 값을 읽기 때문이다.
     //    byte는 -128 ~ 127까지의 값만 저장한다.
     int b = in.read(); // 읽은 값은 0x4d 이다.
+    System.out.printf("%x\n", b);
+
+    System.out.printf("%x\n", in.read());
+    System.out.printf("%x\n", in.read());
+    System.out.printf("%x\n", in.read());
 
     // 3) 읽기 도구를 닫는다.
     in.close();
 
-    System.out.printf("%x\n", b);
 
   }
 
