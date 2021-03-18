@@ -31,11 +31,15 @@ public class Exam0140 {
       @Override
       public void run() {
 
-        // 어떤 객체를 대상으로 여러 스레드가 동시에 사용하지 못하게 할 것인지
-        // 지정해야 한다.
-        // 동기화 블록 문법:
-        // => synchronized(접근대상) {...}
+        // wait()
+        // - 해당 객체에서 notify()를 통해 알림이 올 때까지 스레드의 실행을 멈추게 한다. 
+        // - 이 메서드는 동기화 블록
+        //  (한 번에 한 스레드만이 진입하도록 설정된 블록)에서만 호출할 수 있다.
         //
+        // 동기화 블록 문법:
+        // => synchronized(접근대상) {...}  <== 블록
+        // => synchronized void m() {}  <== 메서드
+
         synchronized (valueBox) {
           System.out.println("스레드 시작했음!");
           try {
