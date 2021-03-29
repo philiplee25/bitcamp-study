@@ -1,31 +1,32 @@
-package com.eomcs.eomcs.pms;
+package com.eomcs.pms;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
-import com.eomcs.eomcs.pms.handler.BoardAddHandler;
-import com.eomcs.eomcs.pms.handler.BoardDeleteHandler;
-import com.eomcs.eomcs.pms.handler.BoardDetailHandler;
-import com.eomcs.eomcs.pms.handler.BoardListHandler;
-import com.eomcs.eomcs.pms.handler.BoardSearchHandler;
-import com.eomcs.eomcs.pms.handler.BoardUpdateHandler;
-import com.eomcs.eomcs.pms.handler.MemberAddHandler;
-import com.eomcs.eomcs.pms.handler.MemberDeleteHandler;
-import com.eomcs.eomcs.pms.handler.MemberDetailHandler;
-import com.eomcs.eomcs.pms.handler.MemberListHandler;
-import com.eomcs.eomcs.pms.handler.MemberUpdateHandler;
-import com.eomcs.eomcs.pms.handler.MemberValidator;
-import com.eomcs.eomcs.pms.handler.ProjectAddHandler;
-import com.eomcs.eomcs.pms.handler.ProjectDeleteHandler;
-import com.eomcs.eomcs.pms.handler.ProjectDetailHandler;
-import com.eomcs.eomcs.pms.handler.ProjectListHandler;
-import com.eomcs.eomcs.pms.handler.ProjectUpdateHandler;
-import com.eomcs.eomcs.pms.handler.TaskAddHandler;
-import com.eomcs.eomcs.pms.handler.TaskDeleteHandler;
-import com.eomcs.eomcs.pms.handler.TaskDetailHandler;
-import com.eomcs.eomcs.pms.handler.TaskListHandler;
-import com.eomcs.eomcs.pms.handler.TaskUpdateHandler;
+import com.eomcs.pms.handler.BoardAddHandler;
+import com.eomcs.pms.handler.BoardDeleteHandler;
+import com.eomcs.pms.handler.BoardDetailHandler;
+import com.eomcs.pms.handler.BoardListHandler;
+import com.eomcs.pms.handler.BoardSearchHandler;
+import com.eomcs.pms.handler.BoardUpdateHandler;
+import com.eomcs.pms.handler.Command;
+import com.eomcs.pms.handler.MemberAddHandler;
+import com.eomcs.pms.handler.MemberDeleteHandler;
+import com.eomcs.pms.handler.MemberDetailHandler;
+import com.eomcs.pms.handler.MemberListHandler;
+import com.eomcs.pms.handler.MemberUpdateHandler;
+import com.eomcs.pms.handler.MemberValidator;
+import com.eomcs.pms.handler.ProjectAddHandler;
+import com.eomcs.pms.handler.ProjectDeleteHandler;
+import com.eomcs.pms.handler.ProjectDetailHandler;
+import com.eomcs.pms.handler.ProjectListHandler;
+import com.eomcs.pms.handler.ProjectUpdateHandler;
+import com.eomcs.pms.handler.TaskAddHandler;
+import com.eomcs.pms.handler.TaskDeleteHandler;
+import com.eomcs.pms.handler.TaskDetailHandler;
+import com.eomcs.pms.handler.TaskListHandler;
+import com.eomcs.pms.handler.TaskUpdateHandler;
 import com.eomcs.util.Prompt;
 
 public class ClientApp {
@@ -57,7 +58,7 @@ public class ClientApp {
   public void execute() throws Exception {
 
     // 사용자 명령을 처리하는 객체를 맵에 보관한다.
-    HashMap<String, Command> commandMap = new HashMap<>();
+    HashMap<String,Command> commandMap = new HashMap<>();
 
     commandMap.put("/board/add", new BoardAddHandler());
     commandMap.put("/board/list", new BoardListHandler());
@@ -105,7 +106,7 @@ public class ClientApp {
             case "history":
               printCommandHistory(commandStack.iterator());
               break;
-            case "history2":
+            case "history2": 
               printCommandHistory(commandQueue.iterator());
               break;
             case "quit":
