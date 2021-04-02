@@ -11,44 +11,37 @@
     <result column="created_date" property="registeredDate"/>
     <result column="view_count" property="viewCount"/>
   </resultMap>
-
-  <select id="selectBoard1" resultMap="BoardMap" parameterType="string">
+  
+  <select id="selectBoard1" resultMap="BoardMap">
     select 
       board_id,
-      title,
+      title,    
       contents,
-      created_date,
-      view_count
+      created_date, 
+      view_count  
     from x_board
-    order by board_id #{sortType}
   </select>
   
-    <select id="selectBoard2" resultMap="BoardMap" parameterType="string">
+  <select id="selectBoard2" resultMap="BoardMap" parameterType="int">
     select 
       board_id,
-      title,
+      title,    
       contents,
-      created_date,
-      view_count
+      created_date, 
+      view_count  
     from x_board
-    order by board_id ${sortType}
+    where board_id=#{no}
   </select>
   
-      <select id="selectBoard3" resultMap="BoardMap" parameterType="string">
+  <select id="selectBoard3" resultType="map" parameterType="int">
     select 
       board_id,
-      title,
+      title,    
       contents,
-      created_date,
-      view_count
+      created_date, 
+      view_count  
     from x_board
-    order by ${sort}
-  </select>
-  
-  <select id="countRecords" resultType="int" parameterType="string">
-    select 
-      count(*)
-    from ${tableName}
+    where board_id=#{no}
   </select>
 </mapper>
 
