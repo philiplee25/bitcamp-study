@@ -15,7 +15,7 @@ public class Exam0110 {
 
     // 정렬 방식을 파라미터로 넘기기
     // => #{} 문법은 오직 값만 삽입할 수 있다.
-    // => SLQ 코드를 삽입할 수 없다.
+    // => SQL 코드를 삽입할 수 없다.
     List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard1", "desc");
 
     for (Board b : boards) {

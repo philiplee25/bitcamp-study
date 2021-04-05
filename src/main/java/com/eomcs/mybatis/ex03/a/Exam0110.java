@@ -13,7 +13,13 @@ public class Exam0110 {
     SqlSession sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(
         "com/eomcs/mybatis/ex03/a/mybatis-config.xml")).openSession();
 
-    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard", 5);
+    // SQL을 실행할 때 파라미터 값을 전달하려면
+    // 두 번째 파라미터로 전달해야 한다.
+    // 여러 개의 값을 전달해야 한다면,
+    // 도메인 객체나 Map 객체에 담아 전달하라!
+
+    // 예) 특정 번호의 게시글을 가져온다.
+    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard1", 5);
 
     for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n",
@@ -23,7 +29,6 @@ public class Exam0110 {
           b.getRegisteredDate(),
           b.getViewCount());
     }
-
     sqlSession.close();
     System.out.println("실행 완료!");
   }

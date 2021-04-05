@@ -1,4 +1,4 @@
-// SQL 문에 삽입할 파라미터 전달하기 - CDATA 섹션을 사용할때 : <[!CDATA[ SQL 문 []]>
+// SQL 문에 삽입할 파라미터 전달하기 - CDATA 섹션을 사용할 때 : <[!CDATA[ SQL 문 []]>
 package com.eomcs.mybatis.ex03.a;
 
 import java.util.List;
@@ -17,10 +17,10 @@ public class Exam0140 {
     // - XML 파서(parser)에게 해당 블록의 내용물이 단순 텍스트임을 알려주는 명령이다.
     // - 문법
     //      <![CDATA[ 내용물 ]]>
-    // - 내용물 안에 XML 파서가 혼동을 일으킬 수 있는 문자가 많을 때 사용하기 적합하다.
-    
+    // - 내용물 안에 XML 파서가 혼동을 일으킬 문자가 많을 때 사용하기 적합하다.
+    // 
     // 예) 특정 번호 미만의 게시글을 가져온다.
-    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard4", 3);
+    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard4", 10);
 
     for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n",
@@ -30,7 +30,6 @@ public class Exam0140 {
           b.getRegisteredDate(),
           b.getViewCount());
     }
-
     sqlSession.close();
     System.out.println("실행 완료!");
   }

@@ -13,7 +13,8 @@ public class Exam0120 {
     SqlSession sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(
         "com/eomcs/mybatis/ex03/a/mybatis-config.xml")).openSession();
 
-    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard2", "aaa");
+    // 예) 특정 제목의 게시글을 가져온다.
+    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard2", "haha");
 
     for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n",
@@ -23,7 +24,6 @@ public class Exam0120 {
           b.getRegisteredDate(),
           b.getViewCount());
     }
-
     sqlSession.close();
     System.out.println("실행 완료!");
   }

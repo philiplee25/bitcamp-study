@@ -5,9 +5,10 @@
 
 <mapper namespace="BoardMapper">
   
+  <!-- insert(sqlId, Board) -->
   <insert id="insert" parameterType="board">
-  insert into x_board(title,contents,created_date)
-  values(#{title}, #{content}, now())
+    insert into x_board(title,contents,created_date)
+    values(#{title}, #{content}, now())
   </insert>
   
 </mapper>

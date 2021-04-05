@@ -12,6 +12,7 @@
     <result column="view_count" property="viewCount"/>
   </resultMap>
   
+  <!-- select 문의 실행 결과가 2개 이상일 때는 selectOne() 으로 실행할 수 없다. -->
   <select id="selectBoard1" resultMap="BoardMap">
     select 
       board_id,
@@ -22,6 +23,7 @@
     from x_board
   </select>
   
+  <!-- select 문의 실행 결과가 1개 인 경우 -->
   <select id="selectBoard2" resultMap="BoardMap" parameterType="int">
     select 
       board_id,
@@ -33,6 +35,7 @@
     where board_id=#{no}
   </select>
   
+  <!-- 결과를 Map 객체로 리턴 받을 수 있다. -->
   <select id="selectBoard3" resultType="map" parameterType="int">
     select 
       board_id,
