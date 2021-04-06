@@ -11,20 +11,20 @@ import com.eomcs.mybatis.vo.Board;
 public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
-    
+
     Scanner keyboard = new Scanner(System.in);
-    
+
     System.out.print("검색어? ");
     String keyword = keyboard.nextLine();
-    
+
     keyboard.close();
-    
+
     SqlSession sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(
         "com/eomcs/mybatis/ex04/g/mybatis-config.xml")).openSession();
 
     List<Board> boards = sqlSession.selectList("BoardMapper.select1", keyword);
 
-    for (Board b: boards) {
+    for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n",
           b.getNo(),
           b.getTitle(),
