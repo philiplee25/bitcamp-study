@@ -39,15 +39,33 @@ public class Exam0120 {
             return 0;
           }
         });
+    
+    // 자동 생성된 인터페이스 구현체를 사용하기
+    // 1) Object 레퍼런스로 바로 사용하기
+    // => 비록 proxy 레퍼런스가 가리키는 객체가 Calculator, Calculator2, Calculator3 인터페이스를
+    //    구현한 클래스 일지라도
+    //    일단 proxy 레퍼런스의 타입이 Object 이기 때문에
+    //    바로 인터페이스의 메서드를 호출할 수 없다.
+    // => 해결책?
+    //    레퍼런스를 바로 사용하지 말고 해당 인터페이스를 형변환 한 다음에 사용하라!
+    
+    //    int result = 0;
+    //    result = proxy.plus(10, 20); // 컴파일 오류!
+    //    result = proxy.minus(10, 20); // 컴파일 오류!
+    //    result = proxy.multiple(10, 20); // 컴파일 오류!
+    //    result = proxy.divide(10, 20); // 컴파일 오류!
+    //    result = proxy.mod(10, 20); // 컴파일 오류!
+    
 
     Calculator c1 = (Calculator) proxy;
-    Calculator2 c2 = (Calculator2) proxy;
-    Calculator3 c3 = (Calculator3) proxy;
-    
     System.out.println(c1.plus(10, 20));
     System.out.println(c1.minus(10, 20));
+
+    Calculator2 c2 = (Calculator2) proxy;
     System.out.println(c2.multiple(10, 20));
     System.out.println(c2.divide(10, 20));
+
+    Calculator3 c3 = (Calculator3) proxy;
     System.out.println(c3.mod(10, 20));
   }
 
